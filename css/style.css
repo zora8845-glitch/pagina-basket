@@ -1,0 +1,224 @@
+/* ===== Variables ===== */
+:root {
+    --negro: #0e0e0e;
+    --rojo: #ce1141;
+    --rojo-oscuro: #a30d33;
+    --gris: #8a8a8a;
+    --linea: rgba(255, 255, 255, 0.05);
+    --fuente-titulo: "Bebas Neue", sans-serif;
+    --fuente-texto: "Inter", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* ===== Fondo de cancha ===== */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: var(--fuente-texto);
+    background-color: var(--negro);
+    background-image:
+        linear-gradient(90deg, transparent calc(50% - 1px), var(--linea) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)),
+        linear-gradient(180deg, transparent calc(23% - 1px), var(--linea) calc(23% - 1px) calc(23% + 1px), transparent calc(23% + 1px)),
+        linear-gradient(180deg, transparent calc(77% - 1px), var(--linea) calc(77% - 1px) calc(77% + 1px), transparent calc(77% + 1px));
+}
+
+/* ===== Tarjeta ===== */
+.contenedor-global {
+    width: min(900px, 92vw);
+    min-height: 410px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0 80px rgba(206, 17, 65, 0.25), 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== Panel del formulario (se ve a la izquierda) ===== */
+.panel-derecha {
+    position: relative;
+    padding: 4rem 2.25rem;
+    background: #fff;
+}
+
+.panel-derecha::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4px;
+    background: linear-gradient(90deg, var(--rojo) 70%, var(--negro) 70% 85%, var(--rojo) 85%);
+}
+
+/* ===== Marca ===== */
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.marca img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.marca h1 {
+    margin: 0;
+    font: 400 2rem/1 var(--fuente-titulo);
+    letter-spacing: 0.06em;
+    color: var(--negro);
+}
+
+.marca h1 span {
+    color: var(--rojo);
+}
+
+.subtitulo {
+    margin: 0.4rem 0 1.5rem;
+    font: 400 0.9rem/1 var(--fuente-titulo);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gris);
+}
+
+/* ===== Campos ===== */
+.formularios label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--negro);
+}
+
+.formularios input:not([type="submit"]) {
+    width: 100%;
+    height: 2.25rem;
+    margin-bottom: 0.9rem;
+    padding: 0 0.75rem;
+    font: 0.8rem var(--fuente-texto);
+    color: var(--negro);
+    background: #f5f5f5;
+    border: 1px solid #e2e2e2;
+    border-radius: 2px;
+}
+
+.formularios input:not([type="submit"])::placeholder {
+    color: #999;
+}
+
+.formularios input:not([type="submit"]):focus {
+    outline: none;
+    border-color: var(--rojo);
+    box-shadow: 0 0 0 3px rgba(206, 17, 65, 0.15);
+}
+
+.formularios form p {
+    margin: 0 0 1.1rem;
+    font-size: 0.72rem;
+    color: var(--gris);
+}
+
+.formularios a {
+    font-weight: 700;
+    color: var(--rojo);
+    text-decoration: none;
+}
+
+.formularios a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Botón ===== */
+.botones input[type="submit"] {
+    width: 100%;
+    height: 2.6rem;
+    font: 400 1.15rem var(--fuente-titulo);
+    letter-spacing: 0.15em;
+    color: #fff;
+    background-color: var(--rojo);
+    border: 0;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.botones input[type="submit"]:hover {
+    background-color: var(--rojo-oscuro);
+    transform: translateY(-2px);
+}
+
+.botones input[type="submit"]:active {
+    background-color: var(--rojo-oscuro);
+    transform: translateY(0);
+}
+
+.botones input[type="submit"]:focus-visible {
+    outline: 3px solid var(--negro);
+    outline-offset: 3px;
+}
+
+/* ===== Panel de imagen (se ve a la derecha) ===== */
+.panel-izquierda {
+    background-image:
+        linear-gradient(160deg, rgba(14, 14, 14, 0.15) 30%, rgba(206, 17, 65, 0.85) 100%),
+        url("../img/img/LeBron-James-Los-Angeles-Lakers-Staples-Center-2019.webp");
+    background-size: cover;
+    background-position: top;
+}
+
+/* ===== Móvil ===== */
+@media (max-width: 700px) {
+    .contenedor-global {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-izquierda {
+        min-height: 240px;
+    }
+}
+
+
+.fila {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.fila>div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.panel-izquierda.azul {
+    background-image:
+        linear-gradient(160deg, rgba(14, 14, 14, 0.15) 30%, rgba(206, 17, 65, 0.85) 100%),
+        url("../img/img/8faafbe6-usatsi_2120524.jpg");
+    background-position: center 45%;
+    object-position: center top;
+}
+
+.formularios select {
+    width: 100%;
+    height: 2.25rem;
+    margin-bottom: 0.9rem;
+    padding: 0 0.75rem;
+    font: 0.8rem var(--fuente-texto);
+    color: var(--negro);
+    background: #f5f5f5;
+    border: 1px solid #e2e2e2;
+    border-radius: 2px;
+}
+
+.formularios select:focus {
+    outline: none;
+    border-color: var(--rojo);
+    box-shadow: 0 0 0 3px rgba(206, 17, 65, 0.15);
+}

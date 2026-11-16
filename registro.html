@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bask - Registro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/registro.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet" />
+
+</head>
+
+<body>
+    <main class="contenedor-global">
+        <section class="panel-derecha">
+            <div class="formularios">
+                <div class="marca">
+                    <img src="img/img/logo.svg" alt="Logo de Bask" />
+                    <h1>Ba<span>sk</span></h1>
+                </div>
+                <p class="subtitulo">Únete al equipo</p>
+                <form action="index.html">
+                    <div class="fila">
+                        <div>
+                            <label for="nombres">Nombres</label>
+                            <input type="text" id="nombres" autocomplete="given-name" required />
+                        </div>
+                        <div>
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" id="apellidos" autocomplete="family-name" required />
+                        </div>
+                    </div>
+
+                    <div class="fila">
+                        <div>
+                            <label for="genero">Género</label>
+                            <select id="genero" required>
+                                <option value="">Seleccionar</option>
+                                <option value="F">Femenino</option>
+                                <option value="M">Masculino</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="nacimiento">Fecha nacimiento</label>
+                            <input type="date" id="nacimiento" autocomplete="bday" required />
+                        </div>
+                    </div>
+
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" id="correo" placeholder="tu@correo.com" autocomplete="email" required />
+
+                    <label for="clave">Contraseña</label>
+                    <input type="password" id="clave" placeholder="········" autocomplete="new-password" required />
+
+                    <p>¿Ya tienes una cuenta? <a href="index.html">Ingresar</a></p>
+
+                    <div class="botones">
+                        <input type="submit" value="Registrarse" />
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="panel-izquierda azul">
+        
+        </section>
+
+    </main>
+</body>
+
+</html>
