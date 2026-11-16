@@ -222,3 +222,31 @@ body {
     border-color: var(--rojo);
     box-shadow: 0 0 0 3px rgba(206, 17, 65, 0.15);
 }
+
+
+@media (max-width: 760px){
+    .contenedor-global{
+        flex-direction:column-reverse ;
+    }
+
+    .contenedor-global section{
+        width: 100%;
+    }
+
+    .panel-izquierda{
+        min-height: 220px;
+    }
+
+    .panel-izquierda{
+        min-height: 220px;
+    }
+
+    .panel-derecha{
+        padding: 36px 24px;
+    }
+
+    .fila{
+        grid-template-columns: 1fr;
+    }
+
+}
